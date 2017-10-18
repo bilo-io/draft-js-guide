@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Editor, EditorState } from 'draft-js';
+import { toJS } from 'immutable';
 import './style.scss';
 
 export default class Lesson1 extends Component {
@@ -11,6 +12,10 @@ export default class Lesson1 extends Component {
     }
     onChange(editorState) {
         this.setState({ editorState });
+        this.logState(editorState);
+    }
+    logState(editorState) {
+        console.log(editorState.toJS())
     }
     render() {
         return this.state ? (

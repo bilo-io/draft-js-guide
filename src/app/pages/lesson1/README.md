@@ -7,7 +7,7 @@ by Bilo Lwabona
 
 - Lesson 1: Intro to Draft.js (current)
 - [Lesson 2: Draft.js API](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson2)
-- [Lesson 3: Draft.js Plugins](hhttps://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson3)
+- [Lesson 3: Draft.js Plugins](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson3)
 - [Lesson 4: Draft.js Custom Plugins](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson4)
 
 ## Lesson 1
@@ -18,7 +18,7 @@ Here is a how you would add a basic draft.js `Editor` component to your applicat
 
 Run the following in your project root:
 ```
-npm install draft-js --save-dev
+npm install draft-js immutable --save-dev
 ```
 
 And then there's component to which you want to add the `Editor`. I've decided to name this component after the lesson we are currently dealing with (here `Lesson1`):
@@ -26,6 +26,7 @@ And then there's component to which you want to add the `Editor`. I've decided t
 ```jsx
 import React, { Component } from 'react';
 import { Editor, EditorState } from 'draft-js';
+import { toJS } from 'immutable';
 //...
 export default class Lesson1 extends Component {
     componentWillMount() {
@@ -36,6 +37,10 @@ export default class Lesson1 extends Component {
     }
     onChange(editorState) {
         this.setState({ editorState });
+        this.logState(editorState);
+    }
+    logState(editorState) {
+        console.log(editorState.toJS())
     }
     render() {
         return this.state ? (
@@ -93,6 +98,15 @@ onChange(editorState) {
 }
 ```
 
+We've also added a small function to log the `editorState`. Since everything is immutable, you'll need to import a `toJS` function from [`immutable`](https://www.npmjs.com/package/immutable), to convert the editorState to a readable format.
+Define the function below, and add it in the `onChange()` handler.
+
+```jsx
+logState(editorState) {
+    console.log(editorState.toJS());
+}
+```
+
 Finally, we can add these to the `<Editor />` component as props.
 >Since we assign EditorState to the component's state, we need to make sure the `this.state` is defined before rendering anything. Otherwise we will get an error along the lines of `cannot read editorState of undefined`.
 
@@ -108,6 +122,6 @@ render() {
 }
 ```
 
-That should just about be it. 
+That should just about be it. In the next lesson we look at some functionality of the Draft.js API.
 
-[Next Lesson](https://github.com/bilo-io/draft-js-guide/tree/lesson3)
+[Next Lesson](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson2)

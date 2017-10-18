@@ -8,7 +8,8 @@ export default class Lesson2 extends Component {
         this.onChange = this.onChange.bind(this);
         this.setState({
             editorState: EditorState.createWithContent(ContentState.createFromText('You are learning Draft.js\n\nThis is a guide from Bilo\n\nReact Rocks')),
-            selection: ''
+            selection: '',
+            block: ''
         })
     }
     onChange(editorState) {
@@ -18,9 +19,6 @@ export default class Lesson2 extends Component {
         this.logState(editorState);
         this.onContentChange(editorState);
         this.onSelectionChange(editorState);
-    }
-    logState(editorState) {
-        console.log(editorState.toJS())
     }
     onSelectionChange(editorState) {
         let selectionState = editorState.getSelection();
@@ -38,7 +36,7 @@ export default class Lesson2 extends Component {
         })
     }
     onContentChange(editorState) {
-
+        let contentState = editorState.getCurrentContent();
     }
     render() {
         return (
