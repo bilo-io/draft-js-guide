@@ -7,6 +7,8 @@ import About from './pages/about';
 import Home from './pages/home';
 import Lesson1 from './pages/lesson1';
 import Lesson2 from './pages/lesson2';
+import Lesson3 from './pages/lesson3';
+import Lesson4 from './pages/lesson4';
 
 require('../app.scss');
 
@@ -28,6 +30,12 @@ export default class App extends React.Component {
                     }, {
                         link: '/lesson2',
                         name: 'Lesson 2'
+                    }, {
+                        link: '/lesson3',
+                        name: 'Lesson 3'
+                    }, {
+                        link: '/lesson4',
+                        name: 'Lesson 4'
                     }
                 ]
             }
@@ -73,6 +81,8 @@ export default class App extends React.Component {
                             <Route exact path="/about" component={About} />
                             <Route exact path="/lesson1" component={Lesson1} />
                             <Route exact path="/lesson2" component={Lesson2} />
+                            <Route exact path="/lesson3" component={Lesson3} />
+                            <Route exact path="/lesson4" component={Lesson4} />
                         </Switch>
                     </AppBody>
                 </div>

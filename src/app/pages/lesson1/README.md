@@ -10,7 +10,7 @@ by Bilo Lwabona
 - [Lesson 3: Draft.js Plugins](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson3)
 - [Lesson 4: Draft.js Custom Plugins](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson4)
 
-## Lesson 1
+## Lesson 1: Intro to Draft.js
 
 DraftJS is a React component using `contenteditable` attribute, and managing its state to perform rich text editing. As such it has its own state object `EditorState`, which gets updated whenever something changes in the editor, whether it is changes in text, the selection, or the cursor position. In the next section, we look at how to use the editorState to perform various tasks.
 

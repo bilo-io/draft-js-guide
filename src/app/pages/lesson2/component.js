@@ -9,18 +9,21 @@ export default class Lesson2 extends Component {
         this.setState({
             editorState: EditorState.createWithContent(ContentState.createFromText('You are learning Draft.js\n\nThis is a guide from Bilo\n\nReact Rocks')),
             selection: '',
-            block: ''
+            block: '',
+            content: []
         })
     }
     onChange(editorState) {
         this.setState({
             editorState
         });
-        this.logState(editorState);
+        this.onEditorChange(editorState);
         this.onContentChange(editorState);
-        this.onSelectionChange(editorState);
     }
-    onSelectionChange(editorState) {
+    logState(editorState) {
+        console.log(editorState.toJS());
+    }
+    onEditorChange(editorState) {
         let selectionState = editorState.getSelection();
         let anchorKey = selectionState.getAnchorKey();
         let start = selectionState.getStartOffset();
@@ -37,6 +40,13 @@ export default class Lesson2 extends Component {
     }
     onContentChange(editorState) {
         let contentState = editorState.getCurrentContent();
+        let contentArray = contentState.getBlocksAsArray();
+        let content = contentArray.map( (c) => c.getText() + '\n');
+        console.log(content);
+
+        this.setState({
+            content
+        })
     }
     render() {
         return (
@@ -48,18 +58,23 @@ export default class Lesson2 extends Component {
                         onChange={this.onChange}
                     />
                 </div>
-                <Section title={'Selection'}>
+                <Section title='Selection'>
                     {this.state.selection}
                 </Section>
-                <Section title={'Block (paragraph)'}>
+                <Section title='Block (paragraph)'>
                     {this.state.block}
+                </Section>
+                <Section title='Content'>
+                    {this.state.content.map( (c, i) => (
+                        <div key={i}>{c}</div>
+                    ))}
                 </Section>
             </div>
         )
     }
 }
 
-export const Section = (props) => {
+const Section = (props) => {
     return (
         <div className='section'>
             <label>{props.title}</label>
