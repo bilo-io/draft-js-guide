@@ -6,6 +6,7 @@ import { AppTopBar, AppSidenav, AppBody } from 'bilo-ui';
 import About from './pages/about';
 import Home from './pages/home';
 import Lesson1 from './pages/lesson1';
+import Lesson2 from './pages/lesson2';
 
 require('../app.scss');
 
@@ -24,6 +25,9 @@ export default class App extends React.Component {
                     }, {
                         link: '/lesson1',
                         name: 'Lesson 1'
+                    }, {
+                        link: '/lesson2',
+                        name: 'Lesson 2'
                     }
                 ]
             }
@@ -68,6 +72,7 @@ export default class App extends React.Component {
                             <Route exact path="/" component={Home} />
                             <Route exact path="/about" component={About} />
                             <Route exact path="/lesson1" component={Lesson1} />
+                            <Route exact path="/lesson2" component={Lesson2} />
                         </Switch>
                     </AppBody>
                 </div>
