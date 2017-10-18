@@ -13,7 +13,7 @@ export default class Lesson3 extends Component {
     render() {
         return this.state ? (
             <div className='page page-padded'>
-                <h2>Lesson 1: A basic Editor</h2>
+                <h2>Lesson 3: Draft.js Plugins Editor</h2>
                 <div className='editor'>
                 <Editor 
                     onChange={this.onChange.bind(this)}

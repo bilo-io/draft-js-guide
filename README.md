@@ -7,9 +7,9 @@ by Bilo Lwabona
 
 As such, I created this guide so that others don't have to go through the pain staking process of digging through a bunch of code all over, in order to get to this point.
 
-## Contents
+## Guide Structure
 
-The lessons are all in this one [Github repo](https://github.com/bilo-io/draft-js-guide), each under it's own branch, named after the lesson. Furthermore, the things covered in the respective lesson have also been implemented, and are present in the source of the same branch.
+The lessons are all in this one [Github repo](https://github.com/bilo-io/draft-js-guide), each in it's own page (under `src/app/pages/`) on the `master` branch. Furthermore, the things covered in the respective lesson have also been implemented, and are present in the source of the same branch.
 
 - [Lesson 1: Intro to Draft.js](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson1)
 - [Lesson 2: Draft.js API](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson2)
