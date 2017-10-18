@@ -10,16 +10,16 @@ const mapStateToProps = (state, ownProps) => {
     return {
         myProps: _state.myProps
     }
-}
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         myAction: () => dispatch(myAction())
     }
-}
+};
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(About)
+)(About);
 

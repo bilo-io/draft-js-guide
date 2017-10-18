@@ -1,11 +1,11 @@
 import React from 'react';
-import {Route, Switch, Link} from 'react-router-dom';
-import {BrowserRouter as Router} from 'react-router-dom';
-// Components
-// Containers
-// Pages
+import { Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { AppTopBar, AppSidenav, AppBody } from 'bilo-ui';
+// pages
 import About from './pages/about';
 import Home from './pages/home';
+import Lesson1 from './pages/lesson1';
 
 require('../app.scss');
 
@@ -13,17 +13,65 @@ export default class App extends React.Component {
     constructor(props) {
         super(props)
     }
+    componentWillMount() {
+        this.setState({
+            sidenav: {
+                isOpen: false,
+                items: [
+                    {
+                        link: '/',
+                        name: 'Home'
+                    }, {
+                        link: '/lesson1',
+                        name: 'Lesson 1'
+                    }
+                ]
+            }
+        });
+    }
+    toggleSidenav() {
+        this.setState({
+            ...this.state,
+            sidenav: {
+                ...this.state.sidenav,
+                isOpen: !this.state.sidenav.isOpen
+            }
+        });
+    }
     render() {
-        return (
+        let { sidenav } = this.state;
+        return this.state ? (
             <Router>
                 <div>
-                    <div className='app-content'>
+                    <AppTopBar>
+                        <img
+                            src='https://raw.githubusercontent.com/bilo-io/resources/master/logo/react.png'
+                            onClick={() => this.toggleSidenav()}
+                            width='48' />
+                        <Link to="/">Draft.js Guide</Link>
+                    </AppTopBar>
+                    <AppBody>
+                        <AppSidenav isOpen={this.state.sidenav.isOpen}>
+                            {sidenav.items.map((page) => {
+                                return <Link
+                                    key={page.link}
+                                    to={page.link}
+                                    className='sidenav-link'
+                                    onClick={() => {
+                                        this.toggleSidenav()
+                                    }}>
+                                    {page.name}
+                                </Link>
+                            })}
+                        </AppSidenav>
                         <Switch>
                             <Route exact path="/" component={Home} />
+                            <Route exact path="/about" component={About} />
+                            <Route exact path="/lesson1" component={Lesson1} />
                         </Switch>
-                    </div>
+                    </AppBody>
                 </div>
             </Router>
-        )
+        ) : null
     }
 }

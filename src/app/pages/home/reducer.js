@@ -16,6 +16,6 @@ const homeReducer = (state = initialState, {
             }
         default: return state;
     }
-}
+};
 
 export default homeReducer;

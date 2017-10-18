@@ -4,7 +4,7 @@ const initialState = {
     data: undefined
 }
 
-const aboutReducer = (state = initialState, {
+const lesson1Reducer = (state = initialState, {
     type,
     ...action
 }) => {
@@ -18,4 +18,4 @@ const aboutReducer = (state = initialState, {
     }
 };
 
-export default aboutReducer;
+export default lesson1Reducer;
