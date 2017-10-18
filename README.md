@@ -11,10 +11,10 @@ As such, I created this guide so that others don't have to go through the pain s
 
 The lessons are all in this one [Github repo](https://github.com/bilo-io/draft-js-guide), each under it's own branch, named after the lesson. Furthermore, the things covered in the respective lesson have also been implemented, and are present in the source of the same branch.
 
-- [Lesson 1: Intro to Draft.js]()
-- [Lesson 2: Draft.js API]()
-- [Lesson 3: Draft.js Plugins]()
-- [Lesson 4: Draft.js Custom Plugins]()
+- [Lesson 1: Intro to Draft.js](https://github.com/bilo-io/draft-js-guide/tree/lesson1)
+- [Lesson 2: Draft.js API](https://github.com/bilo-io/draft-js-guide/tree/lesson2)
+- [Lesson 3: Draft.js Plugins](https://github.com/bilo-io/draft-js-guide/tree/lesson3)
+- [Lesson 4: Draft.js Custom Plugins](https://github.com/bilo-io/draft-js-guide/tree/lesson4)
 
 ## References
 
