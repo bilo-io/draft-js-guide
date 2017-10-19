@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { toJS } from 'immutable';
 import Section from '../../components/section';
-import { Editor, EditorState, ContentState } from 'draft-js';
+import { EditorState, ContentState, CompositeDecorator } from 'draft-js';
+import Editor from 'draft-js-plugins-editor';
 import './style.scss';
 
 export default class Lesson2 extends Component {
@@ -43,8 +44,6 @@ export default class Lesson2 extends Component {
         let contentState = editorState.getCurrentContent();
         let contentArray = contentState.getBlocksAsArray();
         let content = contentArray.map( (c) => c.getText() + '\n');
-        console.log(content);
-
         this.setState({
             content
         })

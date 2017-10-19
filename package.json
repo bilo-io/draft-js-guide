@@ -18,6 +18,7 @@
   "author": "Bilo Lwabona",
   "license": "ISC",
   "dependencies": {
+    "bilo-ui": "0.0.8",
     "express": "^4.16.2",
     "express-history-api-fallback": "^2.2.1",
     "react-router": "^4.2.0",
@@ -29,7 +30,6 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "bilo-ui": "0.0.7",
     "css-loader": "^0.28.7",
     "draft-js": "^0.10.3",
     "draft-js-hashtag-plugin": "^2.0.0-beta10",

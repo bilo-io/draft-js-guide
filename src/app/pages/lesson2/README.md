@@ -116,6 +116,13 @@ If you want to write your own specific styles and behaviours, three main concept
 
 ### Decorators
 
+To create a decorator you need to do the following:
+1. create a `strategy` which triggers with certain content in the editor
+2. create a `component` that get's used when the strategy is triggered
+3. register the strategy and component when initialising the editor, using `CompositeDecorator`
+
+We cover the usage of decorators as a plugin in [Lesson 4](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson4#decorators)
+
 ### Entities
 
 An [entity](https://draftjs.org/docs/advanced-topics-entities.html#content) is an object that represents metadata for a range of text within a Draft editor. It has three properties:
@@ -126,7 +133,7 @@ An [entity](https://draftjs.org/docs/advanced-topics-entities.html#content) is a
 
  ### ContentBlocks
 
-You can think of a [ContentBlock](https://draftjs.org/docs/api-reference-content-block.html) is the equivalent of a paragraph.
+You can think of a [ContentBlock](https://draftjs.org/docs/api-reference-content-block.html) as the equivalent of a paragraph.
  
  ### Selection
 
