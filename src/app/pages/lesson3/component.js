@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import Lesson from '../../components/lesson';
 import { EditorState } from 'draft-js';
-import Editor from 'draft-js-plugins-editor';
+import Editor, {createEditorStateWithText} from 'draft-js-plugins-editor';
 import createLinkifyPlugin from 'draft-js-linkify-plugin';
 import createHashtagPlugin from 'draft-js-hashtag-plugin';
 import 'draft-js-linkify-plugin/lib/plugin.css';
@@ -12,15 +13,14 @@ const hashtagPlugin = createHashtagPlugin();
 
 export default class Lesson3 extends Component {
     componentWillMount() {
-        this.setState({editorState: EditorState.createEmpty()})
+        this.setState({editorState: createEditorStateWithText('Type text such as #hashtags and links like draftjs.com ')})
     }
     onChange(editorState) {
         this.setState({ editorState })
     }
     render() {
         return this.state ? (
-            <div className='page page-padded'>
-                <h2>Lesson 3: Draft.js Plugins Editor</h2>
+            <Lesson title='Lesson 3: Draft.js Plugins Editor'>
                 <div className='editor'>
                 <Editor 
                     onChange={this.onChange.bind(this)}
@@ -29,7 +29,7 @@ export default class Lesson3 extends Component {
                     ref={(e) => this.editor = e}
                 />        
                 </div>
-            </div>
+            </Lesson>
         ) : null
     }
 }

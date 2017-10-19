@@ -12,84 +12,55 @@ by Bilo Lwabona
 
 ## Lesson 4: Draft.js Custom Plugins
 
-In this step we start looking at how to create our own plugins, using the Draft.js API.
 
-Let's start off small, by creating a plugin that does some text highlighting. Specifically, when you type a hexColor, the plugin will highlight that piece of text in the color it specifies.
-
-## Decorators
-
-For this example, we'll create a decorator that renders a hexColor in the color it specifies. We use a regular expression to pick up any hex colors like `#000000` (black) or `#FFFFFF` (white) which is 
-```re
-/#[0-9A-Fa-f]{6}/g
-```
-We'll put the strategy and component in the same file for now, as they are quite compact in this example:
-
-1. Create the **strategy**:
-`./decorators/index.js`:
-```jsx
-const COLOR_REGEX = /#[0-9A-Fa-f]{6}/g;
-
-export const colorStrategy = (contentBlock, callback) => {
-    const text = contentBlock.getText();
-    let matchArray, start;
-    while((matchArray = COLOR_REGEX.exec(text)) !== null) {
-        start = matchArray.index;
-        callback(start, start + matchArray[0].length);
-    }
-}
-```
-
-2. Create the **component**:
-`./decorators/index.js`:
-```jsx
-import React from 'react';
-
-export const ColorComponent = (props) => {
-    return (
-        <span style={{color: props.decoratedText}}>{props.children}</span>
-    )
-}
-
-export default ColorComponent;
-
-//... strategy code above goes here
-```
-
-3. Register the decorator with the editor:
+In this step we cover how to create plugins, starting off with a basic example.
+Let's start off with a clean, empty component for this lesson:
 
 ```jsx
-import ColorComponent, {colorStrategy} from './decorators';
+import React, { Component, PropTypes } from 'react';
+import { EditorState, CompositeDecorator } from 'draft-js';
+import Editor, { createEditorStateWithText } from 'draft-js-plugins-editor';
+import './style.scss';
 
-const decorators = new CompositeDecorator([{
-    strategy: colorStrategy,
-    component: ColorComponent
-}]);
-
-export class Lesson2 extends React.Component {
+export default class Lesson4 extends Component {
     componentWillMount() {
-        // ...
         this.setState({
-            editorState: EditorState.createWithContent(ContentState.createFromText('You are learning Draft.js\n\nThis is a guide from Bilo\n\nReact Rocks'), decorators),
-            //...
+            editorState: createEditorStateWithText('R: #FF0000\nG: #00FF00\nB: #0000FF')
         })
     }
+    onChange(editorState) {
+        this.setState({ editorState })
+    }
+    render() {
+        return this.state ? (
+            <div className='page page-padded'>
+                <h2>Lesson 4: Draft.js Custom Plugins</h2>
+                <div className='editor'>
+                <Editor 
+                    onChange={this.onChange.bind(this)}
+                    editorState={this.state.editorState} 
+                />        
+                </div>
+            </div>
+        ) : null
+    }
 }
 ```
-
-That should be it. Now try typing color Hex codes in the editor, e.g. `#FF0000` (red), `#00FF00` (green), `#0000FF` (blue) and see how the text gets highlighted.
 
 ## Basic Plugins
 
-In this step we cover how to create plugins, starting off with a basic example.
 
 ### plugin: hex-to-color
 
-Now let's turn the whole thing into a plugin, making it cleaner to import.
+making it cleaner to import. Remember the decorators we created in [Lesson 2](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson2#decorators)? Here we are going to turn that into a plugin.
+
 First let's organize our folders a bit, by creating a `./plugin` directory. Within that we create a subfolder, named after the plugin we want `hex-to-color`, and move the file created above to that folder. Finally, add a function which creates the plugin.
 
 `./plugins/hex-to-color/index.js`:
 ```jsx
-// ... add this at the bottom:
+// HERE: Code for Component
+// HERE: Code for Strategy
+
 export const hexToColorPlugin = {
     decorators: [{
         strategy: colorStrategy,
@@ -112,7 +83,6 @@ render() {
 }
 ```
 
->**NOTE:** remember to remove the other code, which uses `CompositeDecorator`to initialise the plugin, and remove the `decorators` as an argument when initialising the Draft.js Editor.
+>**NOTE:** remember to remove the other code, which uses `CompositeDecorator` to initialise the plugin, and remove the `decorators` as an argument when initialising the Draft.js Editor.
 
 Try running it again and everything should be fine. Congratulations. You've created your first plugin!! but let's not stop there. Let's create a few more plugins to illustrate more possibilities.
-

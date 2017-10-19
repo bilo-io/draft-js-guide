@@ -12,10 +12,12 @@ export default class Home extends Component {
         return (
             <div className='page page-padded'>
                 <h1>Draft.js</h1>
-                <Link to='/lesson1'>Lesson 1 - A basic editor</Link>
-                <Link to='/lesson1'>Lesson 2 - Draft.js API</Link>
-                <Link to='/lesson1'>Lesson 3 - Draft.js plugins editor</Link>
-                <Link to='/lesson1'>Lesson 4 - Draft.js Custom Plugins</Link>
+                <div className='guide-lessons-list'>
+                    <Link to='/lesson1'>Lesson 1 - A basic editor</Link>
+                    <Link to='/lesson2'>Lesson 2 - Draft.js API</Link>
+                    <Link to='/lesson3'>Lesson 3 - Draft.js plugins editor</Link>
+                    <Link to='/lesson4'>Lesson 4 - Draft.js Custom Plugins</Link>
+                </div>
             </div>
         )
     }

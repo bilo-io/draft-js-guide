@@ -1,15 +1,23 @@
 import React, { Component, PropTypes } from 'react';
+import Lesson from '../../components/lesson';
 import { toJS } from 'immutable';
 import Section from '../../components/section';
-import { EditorState, ContentState, CompositeDecorator } from 'draft-js';
-import Editor from 'draft-js-plugins-editor';
+import { Editor, EditorState, ContentState, CompositeDecorator } from 'draft-js';
+import ColorComponent, { colorStrategy } from './decorator';
 import './style.scss';
 
+const decorators = new CompositeDecorator([{
+    strategy: colorStrategy,
+    component: ColorComponent
+}]);
 export default class Lesson2 extends Component {
     componentWillMount() {
         this.onChange = this.onChange.bind(this);
         this.setState({
-            editorState: EditorState.createWithContent(ContentState.createFromText('You are learning Draft.js\n\nThis is a guide from Bilo\n\nReact Rocks')),
+            editorState: EditorState.createWithContent(
+                ContentState.createFromText(
+                    'You are learning Draft.js\n\nThis is a guide from Bilo\n\nReact Rocks\n\ndecorator to ting hexColors #00ADEE'),
+            decorators),
             selection: '',
             block: '',
             content: []
@@ -50,8 +58,7 @@ export default class Lesson2 extends Component {
     }
     render() {
         return (
-            <div className='page page-padded'>
-                <h2>Lesson 2: Draft.js API</h2>
+            <Lesson title='Lesson 2: Draft.js API'>
                 <div className='editor'>
                     <Editor
                         editorState={this.state.editorState}
@@ -69,7 +76,7 @@ export default class Lesson2 extends Component {
                         <div key={i}>{c}</div>
                     ))}
                 </Section>
-            </div>
+            </Lesson>
         )
     }
 }

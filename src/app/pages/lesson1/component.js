@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { Editor, EditorState } from 'draft-js';
+import Lesson from '../../components/lesson';
+import { Editor, EditorState, ContentState } from 'draft-js';
 import { toJS } from 'immutable';
 import './style.scss';
 
@@ -7,7 +8,7 @@ export default class Lesson1 extends Component {
     componentWillMount() {
         this.onChange = this.onChange.bind(this);
         this.setState({
-            editorState: EditorState.createEmpty()
+            editorState: EditorState.createWithContent(ContentState.createFromText('This is a basic Draft.js Editor'))
         })
     }
     onChange(editorState) {
@@ -19,14 +20,13 @@ export default class Lesson1 extends Component {
     }
     render() {
         return this.state ? (
-            <div className='page page-padded'>
-                <h2>Lesson 1: A basic Editor</h2>
+            <Lesson title='Lesson 1: A basic Editor'>
                 <div className='editor'>
                     <Editor
                         editorState={this.state.editorState}
                         onChange={this.onChange} />
                 </div>
-            </div>
+            </Lesson>
         ) : null;
     }
 }
