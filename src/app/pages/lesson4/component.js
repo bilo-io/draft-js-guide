@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Lesson from '../../components/lesson';
 import { EditorState, CompositeDecorator } from 'draft-js';
 import Editor, { createEditorStateWithText } from 'draft-js-plugins-editor';
-import { hexToColorPlugin } from './plugins/hex-to-color';
+import { hexToColorPlugin } from './../../plugins/hex-to-color';
 import './style.scss';
 
 export default class Lesson4 extends Component {
@@ -15,7 +15,7 @@ export default class Lesson4 extends Component {
     }
     render() {
         return this.state ? (
-            <Lesson title='Lesson 4: Draft.js Custom Plugins'>
+            <Lesson title='Lesson 4: Draft.js Custom Plugins - Part 1'>
                 <div className='editor'>
                 <Editor 
                     onChange={this.onChange.bind(this)}

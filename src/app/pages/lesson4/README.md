@@ -8,9 +8,10 @@ by Bilo Lwabona
 - [Lesson 1: Intro to Draft.js](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson1)
 - [Lesson 2: Draft.js API](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson2)
 - [Lesson 3: Draft.js Plugins Editor](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson3)
-- Lesson 4: Draft.js Custom Plugins (current)
+- Lesson 4: Draft.js Custom Plugins - Part 1 (current)
+- [Lesson 5: Draft.js Custom Plugins - Part 2](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson5)
 
-## Lesson 4: Draft.js Custom Plugins
+## Lesson 4: Draft.js Custom Plugins - Part 1
 
 
 In this step we cover how to create plugins, starting off with a basic example.
@@ -34,7 +35,7 @@ export default class Lesson4 extends Component {
     render() {
         return this.state ? (
             <div className='page page-padded'>
-                <h2>Lesson 4: Draft.js Custom Plugins</h2>
+                <h2>Lesson 4: Draft.js Custom Plugins - Part 1</h2>
                 <div className='editor'>
                 <Editor 
                     onChange={this.onChange.bind(this)}

@@ -8,7 +8,8 @@ by Bilo Lwabona
 - [Lesson 1: Intro to Draft.js](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson1)
 - Lesson 2: Draft.js API (current)
 - [Lesson 3: Draft.js Plugins Editor](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson3)
-- [Lesson 4: Draft.js Custom Plugins](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson4)
+- [Lesson 4: Draft.js Custom Plugins - Part 1](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson4)
+- [Lesson 5: Draft.js Custom Plugins - Part 2](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson5)
 
 ## Lesson 2: Draft.js API
 
@@ -110,6 +111,10 @@ And again, we display this as a section in the UI:
 </Section>
 ```
 
+### ContentBlocks
+
+You can think of a [ContentBlock](https://draftjs.org/docs/api-reference-content-block.html) as the equivalent of a paragraph. The above example, using `onContentChange()`, gets all `ContentBlocks` in the `ContentState` and assigns it to a string array in `this.state.content`.
+
 ## Custom Functionality
 
 If you want to write your own specific styles and behaviours, three main concepts of interest would be decorators, custom blocks and entities. **Decorators** allow you to apply additional styles to the text itself. **Entities** allow you to attach metadata and behaviour to the text (i.e. adding data that is stored along side the text in a ContentBlock).
@@ -190,13 +195,7 @@ An [entity](https://draftjs.org/docs/advanced-topics-entities.html#content) is a
 - **type**: A string that indicates what kind of entity it is, e.g. `'LINK'`, `'MENTION'`, `'PHOTO'`
 - **mutability**: denotes the behavior of a range of text annotated with this entity object when editing the text range within the editor. 
 - **data**:
-
- ### ContentBlocks
-
-You can think of a [ContentBlock](https://draftjs.org/docs/api-reference-content-block.html) as the equivalent of a paragraph.
  
- ### Selection
-
-
+### Selection
 
 [Next Lesson](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson3)
