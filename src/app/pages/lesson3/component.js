@@ -3,6 +3,8 @@ import { EditorState } from 'draft-js';
 import Editor from 'draft-js-plugins-editor';
 import createLinkifyPlugin from 'draft-js-linkify-plugin';
 import createHashtagPlugin from 'draft-js-hashtag-plugin';
+import 'draft-js-linkify-plugin/lib/plugin.css';
+import 'draft-js-hashtag-plugin/lib/plugin.css';
 import './style.scss';
 
 const linkifyPlugin = createLinkifyPlugin();
@@ -22,8 +24,9 @@ export default class Lesson3 extends Component {
                 <div className='editor'>
                 <Editor 
                     onChange={this.onChange.bind(this)}
-                    plugins={[linkifyPlugin,hashtagPlugin]}
+                    plugins={[hashtagPlugin,linkifyPlugin]}
                     editorState={this.state.editorState} 
+                    ref={(e) => this.editor = e}
                 />        
                 </div>
             </div>

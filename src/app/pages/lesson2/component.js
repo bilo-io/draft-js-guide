@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { toJS } from 'immutable';
+import Section from '../../components/section';
 import { Editor, EditorState, ContentState } from 'draft-js';
 import './style.scss';
 
@@ -72,16 +73,4 @@ export default class Lesson2 extends Component {
             </div>
         )
     }
-}
-
-const Section = (props) => {
-    return (
-        <div className='section'>
-            <label>{props.title}</label>
-            <br />
-            <div style={{marginTop: '1em'}}>
-            {props.children}
-            </div>
-        </div>
-    )
 }

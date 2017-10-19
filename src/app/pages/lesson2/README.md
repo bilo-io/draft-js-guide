@@ -110,9 +110,11 @@ And again, we display this as a section in the UI:
 </Section>
 ```
 
+## Custom Functionality
+
+If you want to write your own specific styles and behaviours, three main concepts of interest would be decorators, custom blocks and entities. **Decorators** allow you to apply additional styles to the text itself. **Entities** allow you to attach metadata and behaviour to the text (i.e. adding data that is stored along side the text in a ContentBlock).
+
 ### Decorators
-
-
 
 ### Entities
 
@@ -122,27 +124,10 @@ An [entity](https://draftjs.org/docs/advanced-topics-entities.html#content) is a
 - **mutability**: denotes the behavior of a range of text annotated with this entity object when editing the text range within the editor. 
 - **data**:
 
-
-We begin with a simple example, whereby we just show various parts of the editorState.
-To save ourselves some time, we can initiate the editor with text, rather than having to type it and then perform selections, deletions, etc. This can be done with `ContentState's` static function `createFromText(:string)`:
-
-```jsx
-// ...
-componentDidMount() {
-    // ...
-    this.setState({
-        editorState: EditorState.createWithContent(ContentState.createFromText('You are learning Draft.js\n\nThis is a guide from Bilo\n\nReact Rocks')),
-        selection: '',
-        block: ''
-    });
-    // ...
-}
-// ...
-```
-
  ### ContentBlocks
 
 You can think of a [ContentBlock](https://draftjs.org/docs/api-reference-content-block.html) is the equivalent of a paragraph.
+ 
  ### Selection
 
 

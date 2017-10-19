@@ -45,11 +45,30 @@ Below is the component, implementing the plugins editor, with the hashtag and li
 ```jsx
 ```
 
-Naturally you need to import these plugins:
+Naturally you need to import these plugins and the respective styles:
 
 ```jsx
 import createLinkifyPlugin from 'draft-js-linkify-plugin';
 import createHashtagPlugin from 'draft-js-hashtag-plugin';
+
+import 'draft-js-linkify-plugin/lib/plugin.css';
+import 'draft-js-hashtag-plugin/lib/plugin.css';
+```
+
+>In order to load the css files, you need to update your `webpack.config.js`:
+```js
+var config: {
+    module: {
+        rules: [
+            //...
+            {
+                test: /plugin\.css$/,
+                loaders: ['style-loader','css-loader']
+            }
+            //...
+        ]
+    }
+}
 ```
 
 Thereafter, you need to create instances of them, in one of many ways, e.g.:

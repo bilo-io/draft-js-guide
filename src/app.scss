@@ -6,7 +6,7 @@ $col-lightgrey:  $col-lightgrey;
 $col-background: $col-background;
 $col-active: #00adee !global;
 $col-accent: #00ffee !global;
-$col-text: $col-text; 
+// $col-text: $col-text; 
 $col-dark: #1d1d1d;
 
 // Dimensions
@@ -38,13 +38,13 @@ body {
  // Elements
 input,input:hover,input:focus,contenteditable,
 textarea, textarea:hover,textarea:focus {
-    @extend .input;
+    // @extend .input;
     color: $col-active;
     border-color: $col-active;
     margin-bottom: 1em;
 }
 button {
-    @extend .button;
+    // @extend .button;
     color: $col-active;
     border-color: $col-active;
     &:hover {

@@ -122,6 +122,18 @@ render() {
 }
 ```
 
-That should just about be it. In the next lesson we look at some functionality of the Draft.js API.
+That should just about be it. 
+
+
+### RichUtils
+
+```js
+//TODO: add section on RichUtils
+```
+
+[https://reactrocket.com/post/getting-started-with-draft-js/](https://reactrocket.com/post/getting-started-with-draft-js/)
+
+
+In the next lesson we look at some functionality of the Draft.js API.
 
 [Next Lesson](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson2)

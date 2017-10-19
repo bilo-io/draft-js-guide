@@ -21,3 +21,4 @@ The lessons are all in this one [Github repo](https://github.com/bilo-io/draft-j
 - [https://draftjs.org/](https://draftjs.org/)
 - [https://www.draft-js-plugins.com/](https://www.draft-js-plugins.com/)
 - [http://davidandsuzi.com/](http://davidandsuzi.com/)
+- [https://reactrocket.com/post/draft-js-search-and-replace/](https://reactrocket.com/post/draft-js-search-and-replace/)
