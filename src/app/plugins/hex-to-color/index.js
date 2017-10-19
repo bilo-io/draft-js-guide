@@ -1,4 +1,5 @@
 import React from 'react';
+import { REGEX_HEX_COLOR } from '../regex';
 
 export const ColorComponent = (props) => {
     return (
@@ -6,11 +7,10 @@ export const ColorComponent = (props) => {
     )
 }
 
-const COLOR_REGEX = /#[0-9A-Fa-f]{6}/g;
 export const colorStrategy = (contentBlock, callback) => {
     const text = contentBlock.getText();
     let matchArray, start;
-    while((matchArray = COLOR_REGEX.exec(text)) !== null) {
+    while((matchArray = REGEX_HEX_COLOR.exec(text)) !== null) {
         start = matchArray.index;
         callback(start, start + matchArray[0].length);
     }

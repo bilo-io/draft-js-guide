@@ -111,9 +111,15 @@ And again, we display this as a section in the UI:
 </Section>
 ```
 
-### ContentBlocks
+### ContentBlock
 
-You can think of a [ContentBlock](https://draftjs.org/docs/api-reference-content-block.html) as the equivalent of a paragraph. The above example, using `onContentChange()`, gets all `ContentBlocks` in the `ContentState` and assigns it to a string array in `this.state.content`.
+You can think of a [ContentBlock](https://draftjs.org/docs/api-reference-content-block.html) as the equivalent of a paragraph. A ContentBlock contains the **full state of a single block of editor content**, including:
+
+- Plain text contents of the block
+- Type, e.g. paragraph, header, list item
+- Entity, inline style, and depth information
+
+The above example, using `onContentChange()`, gets all `ContentBlocks` in the `ContentState` and assigns it to a string array in `this.state.content`.
 
 ## Custom Functionality
 
@@ -194,8 +200,8 @@ An [entity](https://draftjs.org/docs/advanced-topics-entities.html#content) is a
 
 - **type**: A string that indicates what kind of entity it is, e.g. `'LINK'`, `'MENTION'`, `'PHOTO'`
 - **mutability**: denotes the behavior of a range of text annotated with this entity object when editing the text range within the editor. 
-- **data**:
- 
-### Selection
+- **data**: an **optional** object containing the metadata for the entity.
+
+### Custom BlockComponents
 
 [Next Lesson](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson3)

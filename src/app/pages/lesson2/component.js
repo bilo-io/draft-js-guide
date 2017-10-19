@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Lesson from '../../components/lesson';
 import { toJS } from 'immutable';
 import Section from '../../components/section';
-import { Editor, EditorState, ContentState, CompositeDecorator } from 'draft-js';
+import { Editor, EditorState, ContentState, CompositeDecorator, Modifier } from 'draft-js';
 import ColorComponent, { colorStrategy } from './decorator';
 import './style.scss';
 
@@ -21,7 +21,7 @@ export default class Lesson2 extends Component {
             selection: '',
             block: '',
             content: []
-        })
+        }, () => this.createTextEntity(this.state.editorState))
     }
     onChange(editorState) {
         this.setState({
@@ -55,6 +55,23 @@ export default class Lesson2 extends Component {
         this.setState({
             content
         })
+    }
+    createTextEntity(editorState) {
+        const contentState = editorState.getCurrentContent();
+        const contentStateWithEntity = contentState.createEntity(
+            'LINK',
+            'IMMUTABLE',
+            { url: 'http://google.com'}
+        )
+
+        const entityKey = contentStateWithEntity.getLastCreatedEntityKey();
+        const selectionState = editorState.getSelection();
+        const contentStateWithLink = Modifier.applyEntity(
+            contentStateWithEntity,
+            selectionState,
+            entityKey
+        );
+        
     }
     render() {
         return (
