@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { EditorState } from 'draft-js';
 import Editor from 'draft-js-plugins-editor';
+import createLinkifyPlugin from 'draft-js-linkify-plugin';
+import createHashtagPlugin from 'draft-js-hashtag-plugin';
 import './style.scss';
+
+const linkifyPlugin = createLinkifyPlugin();
+const hashtagPlugin = createHashtagPlugin();
 
 export default class Lesson3 extends Component {
     componentWillMount() {
@@ -17,6 +22,7 @@ export default class Lesson3 extends Component {
                 <div className='editor'>
                 <Editor 
                     onChange={this.onChange.bind(this)}
+                    plugins={[linkifyPlugin,hashtagPlugin]}
                     editorState={this.state.editorState} 
                 />        
                 </div>

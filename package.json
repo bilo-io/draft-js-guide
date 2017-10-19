@@ -32,6 +32,8 @@
     "bilo-ui": "0.0.7",
     "css-loader": "^0.28.7",
     "draft-js": "^0.10.3",
+    "draft-js-hashtag-plugin": "^2.0.0-beta10",
+    "draft-js-linkify-plugin": "^2.0.0-beta10",
     "draft-js-plugins-editor": "^2.0.0-beta10",
     "file-loader": "^1.1.5",
     "html-webpack-plugin": "^2.30.1",

@@ -131,9 +131,9 @@ To save ourselves some time, we can initiate the editor with text, rather than h
 componentDidMount() {
     // ...
     this.setState({
-                editorState: EditorState.createWithContent(ContentState.createFromText('You are learning Draft.js\n\nThis is a guide from Bilo\n\nReact Rocks')),
-                selection: '',
-                block: ''
+        editorState: EditorState.createWithContent(ContentState.createFromText('You are learning Draft.js\n\nThis is a guide from Bilo\n\nReact Rocks')),
+        selection: '',
+        block: ''
     });
     // ...
 }
@@ -147,4 +147,4 @@ You can think of a [ContentBlock](https://draftjs.org/docs/api-reference-content
 
 
 
-[Next Lesson](https://github.com/bilo-io/draft-js-guide/tree/lesson3)
+[Next Lesson](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson3)
