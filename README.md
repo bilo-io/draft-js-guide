@@ -32,8 +32,8 @@ The lessons are all in this one [Github repo](https://github.com/bilo-io/draft-j
 - [http://davidandsuzi.com/](http://davidandsuzi.com/)
 - [https://reactrocket.com/post/draft-js-search-and-replace/](https://reactrocket.com/post/draft-js-search-and-replace/)
 - [https://reactrocket.com/post/draft-js-best-practices/](https://reactrocket.com/post/draft-js-best-practices/)
-- [https://github.com/draft-js-plugins/draft-js-plugins/blob/master/HOW_TO_CREATE_A_PLUGIN.md](https://github.com/draft-js-plugins/draft-js-plugins/blob/master/HOW_TO_CREATE_A_PLUGIN.md)
-- [https://github.com/draft-js-plugins/draft-js-plugins/blob/master/HOW_TO_CREATE_A_PLUGIN.md](https://github.com/draft-js-plugins/draft-js-plugins/blob/master/HOW_TO_CREATE_A_PLUGIN.md)
+- [GitHub - DraftJS Plugins - HOW TO CREATE A PLUGIN](https://github.com/draft-js-plugins/draft-js-plugins/blob/master/HOW_TO_CREATE_A_PLUGIN.md)
+
 
 - Series (creating a rich text editor)
 
