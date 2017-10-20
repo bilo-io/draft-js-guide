@@ -31,3 +31,12 @@ The lessons are all in this one [Github repo](https://github.com/bilo-io/draft-j
 - [https://www.draft-js-plugins.com/](https://www.draft-js-plugins.com/)
 - [http://davidandsuzi.com/](http://davidandsuzi.com/)
 - [https://reactrocket.com/post/draft-js-search-and-replace/](https://reactrocket.com/post/draft-js-search-and-replace/)
+- [https://reactrocket.com/post/draft-js-best-practices/](https://reactrocket.com/post/draft-js-best-practices/)
+- [https://github.com/draft-js-plugins/draft-js-plugins/blob/master/HOW_TO_CREATE_A_PLUGIN.md](https://github.com/draft-js-plugins/draft-js-plugins/blob/master/HOW_TO_CREATE_A_PLUGIN.md)
+- [https://github.com/draft-js-plugins/draft-js-plugins/blob/master/HOW_TO_CREATE_A_PLUGIN.md](https://github.com/draft-js-plugins/draft-js-plugins/blob/master/HOW_TO_CREATE_A_PLUGIN.md)
+
+- Series (creating a rich text editor)
+
+    - Part 1: [http://bitwiser.in/2017/04/11/creating-rte-barebones-editor.html](http://bitwiser.in/2017/04/11/creating-rte-barebones-editor.html)
+    - Part 2: [https://medium.com/@bittu/creating-a-rich-text-editor-part-2-text-styling-f6890e2750de](https://medium.com/@bittu/creating-a-rich-text-editor-part-2-text-styling-f6890e2750de)
+    - Part 3: [https://medium.com/@bittu/creating-a-rich-text-editor-part-3-entities-and-decorators-a50c757ecc29](https://medium.com/@bittu/creating-a-rich-text-editor-part-3-entities-and-decorators-a50c757ecc29)

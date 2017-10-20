@@ -71,7 +71,10 @@ export default class Lesson2 extends Component {
             selectionState,
             entityKey
         );
-        
+    }
+    retrieveTextEntity(editorState) {
+        const contentState = editorState.getCurrentContent();
+        const blockWithLinkAtBeginning = contentState.getBlockForKey('...');
     }
     render() {
         return (

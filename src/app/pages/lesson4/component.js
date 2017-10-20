@@ -4,6 +4,8 @@ import { EditorState, CompositeDecorator } from 'draft-js';
 import Editor, { createEditorStateWithText } from 'draft-js-plugins-editor';
 import { hexToColorPlugin } from './../../plugins/hex-to-color';
 import { linkPlugin } from './../../plugins/link';
+import textStylePlugin from '../../plugins/text-style';
+
 import './style.scss';
 
 export default class Lesson4 extends Component {
@@ -21,7 +23,7 @@ export default class Lesson4 extends Component {
                 <Editor 
                     onChange={this.onChange.bind(this)}
                     editorState={this.state.editorState} 
-                    plugins={[hexToColorPlugin, linkPlugin]}
+                    plugins={[hexToColorPlugin, linkPlugin, textStylePlugin]}
                 />        
                 </div>
             </Lesson>

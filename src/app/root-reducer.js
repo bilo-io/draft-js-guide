@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 // Pages
 import aboutReducer from './pages/about/reducer';
+import entitiesReducer from './pages/entities/reducer';
 import homeReducer from './pages/home/reducer';
 import lesson1Reducer from './pages/lesson1/reducer';
 import lesson2Reducer from './pages/lesson2/reducer';
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
     lesson3: lesson3Reducer,
     lesson4: lesson4Reducer,
     lesson5: lesson5Reducer,
+    entities: entitiesReducer
 });
 
 export default rootReducer;

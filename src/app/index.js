@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { AppTopBar, AppSidenav, AppBody } from 'bilo-ui';
 // pages
 import About from './pages/about';
+import Entities from './pages/entities';
 import Home from './pages/home';
 import Lesson1 from './pages/lesson1';
 import Lesson2 from './pages/lesson2';
@@ -25,6 +26,9 @@ export default class App extends React.Component {
                     {
                         link: '/',
                         name: 'Home'
+                    }, {
+                        link: '/entities',
+                        name: 'Entities'
                     }, {
                         link: '/lesson1',
                         name: 'Lesson 1'
@@ -83,6 +87,7 @@ export default class App extends React.Component {
                         <Switch>
                             <Route exact path="/" component={Home} />
                             <Route exact path="/about" component={About} />
+                            <Route exact path="/entities" component={Entities} />
                             <Route exact path="/lesson1" component={Lesson1} />
                             <Route exact path="/lesson2" component={Lesson2} />
                             <Route exact path="/lesson3" component={Lesson3} />
