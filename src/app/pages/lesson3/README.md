@@ -91,7 +91,7 @@ Finally, you need to add these in an array as a prop to the editor.
 And that's it. Pretty easy, right? 
 
 >**NOTE:**
-> - uou can specify multiple plugins to a single editor.
+> - You can specify multiple plugins for a single editor.
 > - You **cannot** specify the same plugin instance to multiple editors. 
 >   - for multiple editors you'll need multiple plugin instances (`e.g. const linkifyPlugin2 = createLinkifyPlugin()`)
 > - You can also initialise the plugins as instance variables (e.g. in the constructor)
