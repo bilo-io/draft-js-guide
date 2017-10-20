@@ -39,6 +39,19 @@ export default class AutocompleteEditor extends React.Component {
         // Get range for latest mention tag trigger symbol
         const personRange = this.getAutocompleteRange(triggers.PERSON_TRIGGER);
 
+        // Find latest trigger
+        if(!tagRange) {
+
+        }
+        if(!personRange) {
+
+        }
+
+        if(!range) {
+
+        }
+
+        // Get TopLeft coordinates of range, to render the suggestions dropdown
         
     }
 

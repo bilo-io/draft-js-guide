@@ -5,7 +5,22 @@ by Bilo Lwabona
 
 [Draft.js](https://draftjs.org/) is a rich text editor that is very powerful, and quite extensible. Unfortunately, there is not as much documentation out there as you would like.
 
-As such, I created this guide so that others don't have to go through the pain staking process of digging through a bunch of code all over, in order to get to this point.
+As such, I created this guide to prevent others from having to go through the pain-staking process of digging through a bunch of code all over, in order to get to this point.
+
+## Quickstart
+
+I do as I say, or at at least I try to ... so this is not just a guide full of README's ... I actually coded this stuff. Run it on your machine:
+
+- `git clone https://github.com/bilo-io/draft-js-guide.git`
+- `cd ./draft-js-guide`
+- `npm install`
+- `npm run dev`
+- [http://localhost:8080](http://localhost:8080)
+
+>**NOTE:**
+>- Each lesson is a page, accessible from the navigation menu
+>   - open the menu by pressing the top left icon in the navbar
+>- Alternatively, you can change the url directly (e.g. `localhost:8080/lesson1`, etc.)
 
 ## Guide Structure
 
@@ -16,14 +31,6 @@ The lessons are all in this one [Github repo](https://github.com/bilo-io/draft-j
 - [Lesson 3: Draft.js Plugins Editor](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson3)
 - [Lesson 4: Draft.js Custom Plugins - Part 1](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson4)
 - [Lesson 5: Draft.js Custom Plugins - Part 2](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson5)
-
-## Quickstart
-
-- `git clone https://github.com/bilo-io/draft-js-guide.git`
-- `cd ./draft-js-guide`
-- `npm install`
-- `npm run dev`
-- [http://localhost:8080](http://localhost:8080)
 
 ## References
 
