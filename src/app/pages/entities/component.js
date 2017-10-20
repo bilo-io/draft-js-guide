@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Lesson from '../../components/lesson';
 import Editor, { createEditorStateWithText } from 'draft-js-plugins-editor';
 import { EditorState, ContentState } from 'draft-js';
-import linkPlugin from '../../plugins/link';
+import textLinkPlugin from '../../draft-js/plugins/text-link';
 import './style.scss';
 
 export default class Entities extends Component {
@@ -11,10 +11,12 @@ export default class Entities extends Component {
     }
     componentWillMount() {
         this.onChange = this.onChange.bind(this);
-        this.setState({editorState: createEditorStateWithText('select text, then press (CTRL + K) ...  (⌘ + K)')});
+        this.setState({ editorState: createEditorStateWithText('select text, then press (CTRL + K) ...  (⌘ + K)') });
     }
     onChange(editorState) {
-        this.setState({editorState});
+        if (editorState.getDecorator() !== null) {
+            this.setState({ editorState });
+        }
     }
     focus() {
         this.editor.focus();
@@ -27,7 +29,7 @@ export default class Entities extends Component {
                     <Editor
                         editorState={editorState}
                         onChange={this.onChange}
-                        plugins={[linkPlugin]}
+                        plugins={[textLinkPlugin]}
                         ref={(element) => this.editor = element}
                     />
                 </div>

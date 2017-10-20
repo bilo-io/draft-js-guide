@@ -3,7 +3,7 @@ import Lesson from '../../components/lesson';
 import { toJS } from 'immutable';
 import Section from '../../components/section';
 import { Editor, EditorState, ContentState, CompositeDecorator, Modifier } from 'draft-js';
-import ColorComponent, { colorStrategy } from './decorator';
+import ColorComponent, { colorStrategy } from '../../draft-js/decorators/';
 import './style.scss';
 
 const decorators = new CompositeDecorator([{

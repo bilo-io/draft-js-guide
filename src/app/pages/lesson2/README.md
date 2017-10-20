@@ -136,14 +136,14 @@ We cover the usage of decorators as a plugin in [Lesson 4](https://github.com/bi
 
 For this example, we'll create a decorator that renders a hexColor in the color it specifies. We use a regular expression to pick up any hex colors like `#000000` (black) or `#FFFFFF` (white) which is 
 ```re
-/#[0-9A-Fa-f]{6}/g
+/#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})/g
 ```
 We'll put the strategy and component in the same file for now, as they are quite compact in this example:
 
 1. Create the **strategy**:
 `./decorators/index.js`:
 ```jsx
-const COLOR_REGEX = /#[0-9A-Fa-f]{6}/g;
+const COLOR_REGEX = /#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})/g;
 
 export const colorStrategy = (contentBlock, callback) => {
     const text = contentBlock.getText();

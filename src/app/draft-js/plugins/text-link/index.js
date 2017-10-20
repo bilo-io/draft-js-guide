@@ -1,20 +1,17 @@
 import React from 'react';
 import { EditorState, ContentState, RichUtils, KeyBindingUtil } from 'draft-js';
-import { REGEX_LINK } from '../regex';
 
 export const LinkComponent = (props) => {
     const { contentState, entityKey } = props;
     const { url } = contentState.getEntity(entityKey).getData()
     return (
-        // <span onClick={() => console.log(props.decoratedText)}>
-        //     <a href={`https://${props.decoratedText}`} style={{color: '#00adee', cursor: 'pointer'}}>{props.children}</a>
-        // </span>
-        <a className="link"
+        <a className='link'
             href={url}
-            rel="noopener noreferrer"
-            target="_blank"
+            rel='noopener noreferrer'
+            target='_blank'
             aria-label={url}
-        >{props.children}
+        >
+            {props.children}
         </a>
     )
 };
@@ -32,7 +29,7 @@ export const linkStrategy = (contentBlock, callback, contentState) => {
     )
 };
 
-export const linkPlugin = {
+export const textLinkPlugin = {
     keyBindingFn(event, { getEditorState, setEditorState }) {
 
         const selection = getEditorState().getSelection();
@@ -44,7 +41,6 @@ export const linkPlugin = {
         }
     },
     handleKeyCommand(command, editorState, { getEditorState, setEditorState }) {
-        console.log({ editorState });
         if (command !== 'add-link') {
             return 'not-handled';
         }
@@ -71,4 +67,4 @@ export const linkPlugin = {
     }]
 };
 
-export default linkPlugin;
+export default textLinkPlugin;
