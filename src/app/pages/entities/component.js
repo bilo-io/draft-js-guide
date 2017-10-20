@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Lesson from '../../components/lesson';
-import Editor from 'draft-js-plugins-editor';
+import Editor, { createEditorStateWithText } from 'draft-js-plugins-editor';
 import { EditorState, ContentState } from 'draft-js';
+import linkPlugin from '../../plugins/link';
 import './style.scss';
 
 export default class Entities extends Component {
@@ -10,7 +11,7 @@ export default class Entities extends Component {
     }
     componentWillMount() {
         this.onChange = this.onChange.bind(this);
-        this.setState({editorState: EditorState.createEmpty()});
+        this.setState({editorState: createEditorStateWithText('select text, then press (CTRL + K) ...  (⌘ + K)')});
     }
     onChange(editorState) {
         this.setState({editorState});
@@ -26,6 +27,7 @@ export default class Entities extends Component {
                     <Editor
                         editorState={editorState}
                         onChange={this.onChange}
+                        plugins={[linkPlugin]}
                         ref={(element) => this.editor = element}
                     />
                 </div>
