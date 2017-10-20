@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Lesson from '../../components/lesson';
 import { EditorState } from 'draft-js';
-import Editor from 'draft-js-plugins-editor';
-import AutocompleteEditor from '../../draft-js/plugins/autocomplete';
+import AutocompleteEditor from '../../components/autocomplete';
 
 import './style.scss';
 
