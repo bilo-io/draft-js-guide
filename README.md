@@ -17,6 +17,14 @@ The lessons are all in this one [Github repo](https://github.com/bilo-io/draft-j
 - [Lesson 4: Draft.js Custom Plugins - Part 1](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson4)
 - [Lesson 5: Draft.js Custom Plugins - Part 2](https://github.com/bilo-io/draft-js-guide/tree/master/src/app/pages/lesson5)
 
+## Quickstart
+
+- `git clone https://github.com/bilo-io/draft-js-guide.git`
+- `cd ./draft-js-guide`
+- `npm install`
+- `npm run dev`
+- [http://localhost:8080](http://localhost:8080)
+
 ## References
 
 - [https://draftjs.org](https://draftjs.org/docs/overview.html#content)
