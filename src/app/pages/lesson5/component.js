@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Lesson from '../../components/lesson';
 import { EditorState } from 'draft-js';
 import AutocompleteEditor from '../../components/autocomplete';
+import createAutocompletePlugin from '../../draft-js/plugins/autocomplete';
 
 import './style.scss';
 

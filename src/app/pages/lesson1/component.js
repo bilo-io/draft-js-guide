@@ -10,6 +10,10 @@ export default class Lesson1 extends Component {
         this.setState({
             editorState: EditorState.createWithContent(ContentState.createFromText('This is a basic Draft.js Editor'))
         })
+        let myObj = {
+            name: 'Bilo',
+            age: 27
+        }
     }
     onChange(editorState) {
         this.setState({ editorState });
