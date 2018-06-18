@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+import { MDReader } from 'bilo-ui';
+import { Editor, EditorState, ContentState, CompositeDecorator, Modifier } from 'draft-js';
+
 import Lesson from '../../components/lesson';
 import { toJS } from 'immutable';
 import Section from '../../components/section';
-import { Editor, EditorState, ContentState, CompositeDecorator, Modifier } from 'draft-js';
 import ColorComponent, { colorStrategy } from '../../draft-js/decorators/';
 import './style.scss';
 
@@ -96,6 +98,8 @@ export default class Lesson2 extends Component {
                         <div key={i}>{c}</div>
                     ))}
                 </Section>
+
+                <MDReader url={'https://raw.githubusercontent.com/bilo-io/draft-js-guide/master/src/app/pages/lesson2/README.md'} />
             </Lesson>
         )
     }

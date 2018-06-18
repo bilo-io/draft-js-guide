@@ -29,6 +29,7 @@ export default class Lesson3 extends Component {
                     ref={(e) => this.editor = e}
                 />        
                 </div>
+                <MDReader url={'https://raw.githubusercontent.com/bilo-io/draft-js-guide/master/src/app/pages/lesson3/README.md'} />
             </Lesson>
         ) : null
     }

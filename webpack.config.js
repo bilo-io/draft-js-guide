@@ -1,6 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var marked = require('marked');
+var renderer = new marked.Renderer();
+
 var DIST = path.resolve(__dirname, 'dist/');
 var SRC = path.resolve(__dirname, 'src/');
 
@@ -30,6 +33,20 @@ var config = {
             }, {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                 loader: 'file-loader?name=assets/[name].[ext]'
+            },{
+                test: /\.md$/,
+                use: 'raw-loader'
+                // use: [
+                //     {
+                //         loader: 'html-loader'
+                //     }, {
+                //         loader: 'markdown-loader',
+                //         options: {
+                //             pedantic: true,
+                //             renderer
+                //         }
+                //     }
+                // ]
             }
         ]
     },

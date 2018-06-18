@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import { MDReader } from 'bilo-ui';
+
 import Lesson from '../../components/lesson';
 import { EditorState } from 'draft-js';
 import AutocompleteEditor from '../../components/autocomplete';
@@ -31,6 +33,7 @@ export default class Lesson5 extends Component {
                     onAutocompleteChange={this.onAutocompleteChange}
                 />   
                 </div>             
+                <MDReader url={'https://raw.githubusercontent.com/bilo-io/draft-js-guide/master/src/app/pages/lesson5/README.md'} />
             </Lesson>
         ): null
     }

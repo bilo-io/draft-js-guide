@@ -1,7 +1,10 @@
 import React, { Component, PropTypes } from 'react';
-import Lesson from '../../components/lesson';
 import { Editor, EditorState, ContentState } from 'draft-js';
 import { toJS } from 'immutable';
+import { MDReader } from 'bilo-ui';
+
+import Readme from './README.md';
+import Lesson from '../../components/lesson';
 import './style.scss';
 
 export default class Lesson1 extends Component {
@@ -13,7 +16,6 @@ export default class Lesson1 extends Component {
     }
     onChange(editorState) {
         this.setState({ editorState });
-        this.logState(editorState);
     }
     logState(editorState) {
         console.log(editorState.toJS())
@@ -26,6 +28,9 @@ export default class Lesson1 extends Component {
                         editorState={this.state.editorState}
                         onChange={this.onChange} />
                 </div>
+                <MDReader markdown={Readme} />
+                {/* <MDReader url={'https://raw.githubusercontent.com/bilo-io/draft-js-guide/master/src/app/pages/lesson1/README.md'} /> */}
+                
             </Lesson>
         ) : null;
     }

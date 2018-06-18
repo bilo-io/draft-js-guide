@@ -4,7 +4,7 @@
   "description": "A guide on various aspects of draft-js ... from using the basic editor, to using the plugin-editor with a variety of plugins, and finally how to write your own draft-js-plugin",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --port 8080",
+    "dev": "webpack-dev-server --inline --port 8911",
     "build": "webpack -p",
     "start": "node ./artifact/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,7 +18,7 @@
   "author": "Bilo Lwabona",
   "license": "ISC",
   "dependencies": {
-    "bilo-ui": "0.0.8",
+    "bilo-ui": "0.0.9",
     "express": "^4.16.2",
     "express-history-api-fallback": "^2.2.1",
     "react-router": "^4.2.0",
@@ -36,10 +36,13 @@
     "draft-js-linkify-plugin": "^2.0.0-beta10",
     "draft-js-plugins-editor": "^2.0.0-beta10",
     "file-loader": "^1.1.5",
+    "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
+    "markdown-loader": "^2.0.1",
     "node-sass": "^4.5.3",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "raw-loader": "^0.5.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
