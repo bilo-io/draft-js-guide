@@ -1,0 +1,11 @@
+$color: #00adee;
+
+.autocompleteSelection {
+    border: 1px solid $color;
+    background-color: rgba($color, 0.2);
+}
+
+.defaultBlock {
+  border-bottom: 1px solid limegreen;
+  background-color: grey;
+}

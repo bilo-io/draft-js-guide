@@ -4,6 +4,7 @@ import { MDReader } from 'bilo-ui';
 import Lesson from '../../components/lesson';
 import { EditorState } from 'draft-js';
 import AutocompleteEditor from '../../components/autocomplete';
+import createAutocompletePlugin from '../../draft-js/plugins/autocomplete';
 
 import './style.scss';
 
